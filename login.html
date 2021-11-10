@@ -38,12 +38,11 @@
             text-align: center;
         }
         .r2 {
-            height: 100%;
+            height: auto;
             background-color: #f1f1f1;
         }
-        .three-column{
+        .one-column{
             display: grid;
-            grid-template-columns: 2fr 7fr 3fr;
             background-color:  #FFF;
             grid-column-gap: 1em;
         }
@@ -57,7 +56,7 @@
             text-align: center;
             margin: 15px auto 0px;
             border-bottom: 1px solid #a8a7a7;
-            padding: 15px ;
+            padding: 15px;
         }
         .left-nav{
             list-style-type: none;
@@ -74,11 +73,7 @@
             background-color: #8d8c8c;
         }
         .c2{
-            display: grid;
-            grid-gap: 1em;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: 1fr 1fr 1fr;
-            grid-auto-rows: min-content;
+            padding: 2em;
         }
         .h2-content{
             grid-column: 1/5;
@@ -88,7 +83,30 @@
         .c2 > img {
             width: 100%;
             align-self: center;
-            max-height: 130px;
+            max-height: 70px;
+        }
+        .contact-form{
+            width: 300px;
+            padding: 500px;
+            margin: 100px auto;
+        }
+        .contact-input{
+            width: 91%;
+            padding: 15px;
+            margin: 5px;
+        }
+        .submit-button{
+            padding: 10px 25px;
+            background-color: #CCC;
+            float: right;
+            margin-top: 12px;
+        }
+        .error-message{
+            color: red;
+            display: block;
+            margin-top: 5px;
+            padding: 7px;
+            display: none;
         }
         </style>
     
@@ -99,40 +117,19 @@
         <div class="r1 box-shadow">
             <h2>Kelsey Ewing</h2>
         </div>
-        <div class="r2 three-column">
-            <div class="c1 box-shadow">
-                <h2 class= "txt-center">Navigation</h2>>
-            <ul class= "left-nav">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./contact-us.html">Contact Us</a></li>
-                <li><a href="./gallery.html">Gallery</a></li>
-                <li><a href="#">Link 5</a></li>
-                <li><a href="#">Link 6</a></li>
-                <li><a href="./login.html">Login</a></li>
-            </ul>
-            </div>
+        <div class="r2 one-column">
             <div class="c2">
-                <h2 class= "txt-center h2-content">Recent product</h2>
-                <img class= "box-shadow" src= "./images/1.jpeg">
-                <img class= "box-shadow" src= "./images/2.jpeg">
-                <img class= "box-shadow" src= "./images/3.jpeg">
-                <img class= "box-shadow" src= "./images/4.jpeg">
-                <img class= "box-shadow" src= "./images/5.jpeg">
-                <img class= "box-shadow" src= "./images/6.jpeg">
-                <img class= "box-shadow" src= "./images/7.jpeg">
-                <img class= "box-shadow" src= "./images/8.jpeg">
-                <img class= "box-shadow" src= "./images/9.jpeg">
-                <img class= "box-shadow" src= "./images/10.jpeg">
-                <img class= "box-shadow" src= "./images/11.jpeg">
-                <img class= "box-shadow" src= "./images/12.jpeg">
-            </div>
-            <div class="c3 box-shadow">
-                <h2 class= "txt-center">Recent product</h2>
+                <form class= "contact-form">
+                <input placeholder= "Username" type= "text" id= "username" class= "contact-input">
+                <input placeholder= "Password" type= "password" id= "password" class= "contact-input">
+                <button onclick= "login.login()" class= "submit-button" type= "button">Login</button>
+                </form>
+                <span id= "error-box" class= "error-message">Error!</span>
             </div>
         </div>
         <div class="r3">
             Copyright 2021 - Created by Kelsey Ewing
         </div>
+    <script type= "text/javascript" src= "./js/login.js"></script>
     </body>
 </html>
